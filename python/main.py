@@ -1,0 +1,62 @@
+import sys
+import os
+import subprocess
+
+def main():
+    while True:
+    	sys.stdout.write("$ ")
+    	sys.stdout.flush()
+    	command = input()
+    	c = command.split(" ")
+    	if c[0] == "exit":
+    		if len(c) > 1 and c[1].isdigit()
+    			sys.exit(int(c[1])]
+    		else:
+    			sys.exit()
+    			
+    	if c[0] == "echo":
+    		sys.stdout.write(" ".join(c[1:]) + "\n")
+    		continue
+    		
+    	if c[0] == "type" :
+    		for e in c(1:]:
+    			if e == "echo"
+    				print("echo is a shell builtin")
+    			elif e == "exit":
+    				print("exit is a shell builtin")
+    			elif e == "type":
+    				print("type is a shell builtin")
+    			else:
+    				found = False
+    				for path in os.getenv("Path").split
+    					if os.path.isdir(path):
+    						for f in os.listdir(path)
+    							if f == c[1]:
+    								print(f"{c[1]} is {path}/{c[1]}")
+    								found = True
+    								break
+    								
+    					if found:
+    						break
+    				if not found:
+    				print(f"{e}: not found")
+    		continue
+    	else:
+    		found = False
+    		for path in os.getenv("PATH").split(os.pathsep):
+    			if os.path.isdir(path):
+    				for f in os.listdir(path)
+    					if f == c[0]:
+    						result = subprocess.run(c, capture_output=True, text=True
+    						print(result.stdout, end="")
+    						found = True
+    						break
+    						
+    		if found: 
+    			break
+    			
+    	if not found:    					
+ 	   	print(f"{command}: command not found")
+
+if __name__ == "__main__":
+    main()
