@@ -5,8 +5,8 @@ A secure terminal-based login system with deployment objectives and documentatio
 ## Quick Start
 
 ```bash
-bash /home/jesse/challenges/shell/lynx2/setup.sh
-/home/jesse/challenges/shell/lynx2/login.sh
+bash /shell/lynx/setup.sh
+/shell/lynx/login.sh
 ```
 
 ## Credentials
